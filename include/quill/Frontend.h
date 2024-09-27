@@ -21,7 +21,6 @@
 #include <cassert>
 #include <cstddef>
 #include <cstdint>
-#include <initializer_list>
 #include <memory>
 #include <string>
 #include <vector>
@@ -109,7 +108,7 @@ public:
    * @return Logger* A pointer to the created or retrieved logger.
    */
   static logger_t* create_or_get_logger(
-    std::string const& logger_name, std::initializer_list<std::shared_ptr<Sink>> sinks,
+    std::string const& logger_name, std::vector<std::shared_ptr<Sink>> const& sinks,
     PatternFormatterOptions const& pattern_formatter_options = PatternFormatterOptions{},
     ClockSourceType clock_source = ClockSourceType::Tsc, UserClockSource* user_clock = nullptr)
   {
